@@ -22,13 +22,11 @@ const server = new ApolloServer({
     plugins: [ApolloServerPluginDrainHttpServer({ httpServer })]
 });
 
-app.listen({ port: process.env.PORT || 4000 }, async () => {
-    await dbConnection();
-    await server.start();
+await dbConnection();
+await server.start();
 
-    server.applyMiddleware({ app });
-    
-    console.log('Server is running');
-});
+server.applyMiddleware({ app });
+
+console.log('Server is running');
 
 export default httpServer;
