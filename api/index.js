@@ -1,9 +1,9 @@
 import express from 'express';
 import cors from 'cors';
 import { ApolloServer } from 'apollo-server-express';
-import dbConnection from './driver/mongo-connection.js';
-import { tipos } from './graphql/types.js';
-import { resolvers } from './graphql/resolvers.js';
+import dbConnection from '../driver/mongo-connection.js';
+import { tipos } from '../graphql/types.js';
+import { resolvers } from '../graphql/resolvers.js';
 import { ApolloServerPluginDrainHttpServer } from "apollo-server-core";
 import http from "http";
 
